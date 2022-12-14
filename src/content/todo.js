@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./todo.css";
 
 export const TODO = () => {
@@ -20,6 +20,7 @@ export const TODO = () => {
       let newEntry = { id: num, title: newTask, status: false };
       setToDo([...toDo, newEntry]);
       setNewTask("");
+      localStorage.setItem("");
     }
   };
 
