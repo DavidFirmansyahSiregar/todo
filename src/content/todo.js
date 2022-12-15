@@ -20,7 +20,7 @@ export const TODO = () => {
       let newEntry = { id: num, title: newTask, status: false };
       setToDo([...toDo, newEntry]);
       setNewTask("");
-      localStorage.setItem("");
+      localStorage.setItem(newTask);
     }
   };
 

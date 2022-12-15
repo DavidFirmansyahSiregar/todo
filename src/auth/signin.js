@@ -12,7 +12,7 @@ export const SignIn = () => {
   const onFinish = () => {
     console.log("Received values of form: ", data);
     message.success("You're logged in");
-    navigate("/tod");
+    navigate("/todo");
   };
 
   return (
