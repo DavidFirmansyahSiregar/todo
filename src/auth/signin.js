@@ -1,8 +1,8 @@
 import { Button, Form, Input, message } from "antd";
 import { MailOutlined, LockOutlined } from "@ant-design/icons";
 import React, { useState,} from "react";
-import "./auth.css";
 import { useNavigate } from "react-router-dom";
+import './auth.css';
 
 export const SignIn = () => {
   

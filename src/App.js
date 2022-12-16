@@ -7,17 +7,18 @@ import {SignIn} from './auth/signin';
 import {TODO} from './content/todo';
 import './App.css';
 
-export const App = () => {
+function App () {
   return (
     <div>
       <Router>
         <Routes>
-          <Route path="/signup" element={<SignUp />}></Route>
-          <Route path="/signin" element={<SignIn />}>
-            <Route path="/todo" element={<TODO />} />
-          </Route>
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/signin" element={<SignIn />} />
+          <Route path="/todo" element={<TODO />} /> 
         </Routes>
       </Router>
     </div>
   )
 }
+
+export default App;

@@ -1,4 +1,12 @@
 import React, { useState, useEffect } from "react";
+import { 
+  Button, 
+  Col, 
+  Form, 
+  Input, 
+  Row, 
+ } 
+from "antd";
 import "./todo.css";
 
 export const TODO = () => {
@@ -57,59 +65,55 @@ export const TODO = () => {
     })
     setToDo(newTask);
   }
-  useEffect(() =>{
-   localStorage.getItem("toDo", JSON.stringify)
-   (toDo);
-  })
 
   return (
-    <div className="container App">
-    <h2>TO DO LIST APP</h2>
+    <div>
+      <Form>
+    <h2>TO DO LIST</h2>
    
     {updateData && updateData ? (
       <>
-    <div className="row">
-      <div className="col">
-        <input 
+    <Row>
+      <Col>
+        <Input 
           value={ updateData && updateData.title }
           onChange={ (e) => changeTask(e)}
-          className='form-control form-control-lg'
         />
-      </div>
-      <div className="col-auto">
-        <button
+      </Col>
+      <Col>
+        <Button
           onClick={updateTask}
           className="btn btn-lg btn-success mr-20">
             Update
-        </button>
-        <button
+        </Button>
+        <Button
           onClick={cancelUpdate}
           className="btn btn-lg btn-warning">
             Cancel  
-        </button>
-      </div>
-    </div>
-    <br />
+        </Button>
+      </Col>
+    </Row>
+    
     </>
     ) : (
       <>
-      <div className="row">
-        <div className="col">
-          <input
+      <Row>
+        <Col>
+          <Input
             value={newTask}
             onChange={ (e) => setNewTask(e.target.value)}
-            className="form-control form-control-lg"
+            
           />
-        </div>
-      <div className="col-auto">
-        <button
+        </Col>
+      <Col>
+        <Button
           onClick={addTask}
           className="btn btn-lg btn-success">
             Add Task
-          </button>
-      </div>
-      </div>
-    <br />
+          </Button>
+      </Col>
+      </Row>
+   
       </>
     )}
 
@@ -118,7 +122,7 @@ export const TODO = () => {
       .map( (task,index) => {
         return(
           <React.Fragment key={task.id}>
-            <div className="col taskBg">
+            <Col>
               <div className={task.status ? 'done' : ''}> 
                 <span className="taskNumber"> {index + 1}
                 </span>
@@ -146,13 +150,13 @@ export const TODO = () => {
               
                 </span>
               </div>
-            </div>
+            </Col>
 
         </React.Fragment>
         )
       })
     }
-
+    </Form>
     </div>
   );
 }
