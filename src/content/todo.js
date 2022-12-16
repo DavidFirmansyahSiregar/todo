@@ -57,6 +57,10 @@ export const TODO = () => {
     })
     setToDo(newTask);
   }
+  useEffect(() =>{
+   localStorage.getItem("toDo", JSON.stringify)
+   (toDo);
+  })
 
   return (
     <div className="container App">
